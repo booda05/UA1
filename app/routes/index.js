@@ -6,6 +6,7 @@ router.get('/', (req, res) => {
     res.render('index', { title: 'Accueil' }); 
 });
 
+
 router.use('/sessions', require('./sessions'));
 router.use('/cours', require('./cours'));
 router.use('/etudiants', require('./etudiants'));

@@ -46,7 +46,7 @@ exports.addEtudiant = async (req, res) => {
     const newEtudiant = req.body; // Recover the form data
 
     // Validate the input data
-    if (!newEtudiant.name || !newEtudiant.email || !newEtudiant.major) {
+    if (!newEtudiant.nom || !newEtudiant.prenom) {
       throw new Error('Invalid input');
     }
 
@@ -75,11 +75,15 @@ exports.searchEtudiants = async (req, res) => {
     const { query } = req.query;
     const etudiants = await readEtudiants();
     const filtreEtudiants = etudiants.filter((etudiant) =>
-      etudiant.name.toLowerCase().includes(query.toLowerCase())
+      etudiant.nom?.toLowerCase().includes(query.toLowerCase())
     );
+    
+    const found = filtreEtudiants.length > 0;
+    
     res.render('listEtudiants', {
-      title: 'Résultat de la recherche',
+      title: found ? 'Résultat de la recherche' : 'Étudiant introuvable',
       etudiants: filtreEtudiants,
+      found
     });
   } catch (error) {
     res.status(500).send(error.message);

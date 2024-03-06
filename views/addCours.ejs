@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Ajouter un cours</title>
+    <title>Ajouter un Cours</title>
     <link rel="stylesheet" href="/css/addStyle.css">
-
 </head>
 <body>
-    <h1>Ajouter un nouveau cours</h1>
-    <form action="/cours/add" method="post">
-        <div>
-            <label for="title">Titre du cours:</label>
-            <input type="text" id="title" name="title" required>
-        </div>
-        <div>
-            <label for="description">Description:</label>
-            <textarea id="description" name="description" required></textarea>
-        </div>
-        <button type="submit">Ajouter</button>
-    </form>
+    <h1 class="page-title">Ajouter un Cours</h1>
+    <div class="modal-container">
+        <form action="/cours/add" method="post" class="form-modal">
+            <div class="form-group">
+                <input type="text" id="title" name="title" placeholder="Titre du cours" required>
+            </div>
+            <div class="form-group">
+                <textarea id="description" name="description" placeholder="Description" required></textarea>
+            </div>
+            <button type="submit">Ajouter</button>
+        </form>
+    </div>
 </body>
 </html>

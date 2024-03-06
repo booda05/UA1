@@ -1,27 +1,48 @@
 /* public/css/addStyle.css */
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.page-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #15273a;
+}
+
+.modal-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 50%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .form-group {
+    width: 100%; /* Ajustez selon la largeur désirée pour les champs */
     margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
 }
 
 input[type="text"],
 textarea {
-    width: 100%;
+    width: calc(100% - 20px); /* ajuste pour padding */
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-family: Arial, sans-serif;
 }
 
 button[type="submit"] {
@@ -31,4 +52,5 @@ button[type="submit"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-family: Arial, sans-serif;
 }

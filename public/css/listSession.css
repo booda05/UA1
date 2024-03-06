@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Si vous voulez les sessions en colonne */
+    align-items: center;
+    width: 100%;
+}
+
+li {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 60%; /* Ajustez cette valeur selon la largeur désirée des blocs */
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px; /* Ajustez la taille du texte si nécessaire */
+}
+
+.button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+.buttons-container {
+    text-align: center; /* Centre les boutons si vous enveloppez vos <a> dans un div avec cette classe */
+    margin-bottom: 20px; /* Ajoute de l'espace entre les boutons et la liste */
+}

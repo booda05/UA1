@@ -8,7 +8,10 @@
 </head>
 <body>
     <h1>Liste des cours</h1>
-    <a href="/cours/add" class="button">Ajouter un cours</a>
+    <div class="buttons-container">
+        <a href="/" class="button">Accueil</a>
+        <a href="/cours/add" class="button">Ajouter un Cours</a>
+    </div>    
     <ul>
         <% cours.forEach(function(course) { %>
             <li><%= course.title %>: <%= course.description %></li>

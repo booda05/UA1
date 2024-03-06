@@ -1,20 +1,31 @@
-<!-- views/listStudents.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Liste des étudiants</title>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/listStyle.css">
 </head>
 <body>
-    <h1>Liste des étudiants</h1>
-    <form action="/etudiants/search" method="get">
-        <input type="text" name="query" placeholder="Rechercher un étudiant">
-        <button type="submit">Rechercher</button>
-    </form>
-    <ul>
-        <% etudiants.forEach(function(student) { %>
-            <li><%= student.name %> - <%= student.email %></li>
-        <% }) %>
-    </ul>
+    <h1><%= title %></h1>
+    <div class="search-container">
+        <form action="/etudiants/search" method="get">
+            <input type="text" name="query" placeholder="Rechercher un étudiant">
+            <button type="submit">Rechercher</button>
+        </form>
+    </div>
+    <div class="buttons-container">
+        <a href="/" class="button">Accueil</a>
+        <a href="/etudiants/add" class="button">Ajouter un étudiant</a>
+    </div>
+    
+    <% if (!found) { %>
+        <p>Étudiant introuvable.</p>
+    <% } else { %>
+        <ul>
+            <% etudiants.forEach(function(student) { %>
+                <li><%= student.nom %> - <%= student.prenom %></li>
+            <% }) %>
+        </ul>
+    <% } %>
 </body>
 </html>

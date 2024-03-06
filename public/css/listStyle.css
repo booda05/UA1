@@ -1,19 +1,60 @@
-/* public/css/style.css */
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 0;
+    margin: 0;
+    padding: 20px;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+form {
+    width: 100%;
+    max-width: 500px; /* Ajustez selon la largeur souhaitée */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex-grow: 1; /* Permet à l'input de prendre le maximum d'espace disponible */
+    margin-right: 10px; /* Espacement entre l'input et le bouton */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .button {
+    padding: 10px 15px;
     background-color: #007bff;
     color: white;
-    padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
     display: inline-block;
-    margin-bottom: 20px;
+}
+
+.button:hover {
+    background-color: #0056b3;
 }
 
 ul {
@@ -23,8 +64,8 @@ ul {
 
 li {
     background-color: white;
-    border: 1px solid #ddd;
-    margin-top: -1px; /* Eliminate the space between the li */
+    margin-bottom: 10px;
     padding: 10px;
+    border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }

@@ -29,7 +29,7 @@ function readSessions() {
 //fonction pour sauvegarder dans dans le fichier session
 function saveSession(session) {
     return new Promise((resolve, reject) => {
-        const data = JSON.stringify(sessions, null, 2);
+        const data = JSON.stringify(session, null, 2);
         fs.writeFile(sessionsFilePath , data, err => {
             if (err) reject(err);
             resolve();
@@ -45,10 +45,11 @@ exports.showAddSessionForm = (req, res) => {
 //Ajouter une nouvelle Session
 exports.addSession = async (req, res) => {
     try {
+        const sessions = await readSessions(); //lecture des sessions
         const newSession = req.body; //recuperation des données envoyer
-        const session = await readSessions(); //lecture des sessions
-        session.push(newSession); //ajoute la nouvelle session a la liste des sessions
-        await saveSession(session);
+        
+        sessions.push(newSession); //ajoute la nouvelle session a la liste des sessions
+        await saveSession(sessions);
         res.redirect('/sessions/list');
     }catch(error){
         res.status(500).send(error.toString());

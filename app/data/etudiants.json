@@ -1,17 +1,42 @@
 [
   {
-    "name": "Alice Dupont",
-    "email": "alice.dupont@example.com",
-    "specialite": "Informatique"
+    "nom": "Dupont",
+    "prenom": "Alice"
   },
   {
-    "name": "Bob Martin",
-    "email": "bob.martin@example.com",
-    "specialite": "Génie civil"
+    "nom": "Martin",
+    "prenom": "Bob"
   },
   {
-    "name": "simohand ",
-    "email": "simohand@gmail.com",
-    "major": "programmation"
+    "nom": "Tremblay",
+    "prenom": "Sophie"
+  },
+  {
+    "nom": "Smith",
+    "prenom": "John"
+  },
+  {
+    "nom": "Garcia",
+    "prenom": "Maria"
+  },
+  {
+    "nom": "Kim",
+    "prenom": "Ji-hyun"
+  },
+  {
+    "nom": "Müller",
+    "prenom": "Hans"
+  },
+  {
+    "nom": "Li",
+    "prenom": "Wei"
+  },
+  {
+    "nom": "Chen",
+    "prenom": "Lily"
+  },
+  {
+    "nom": "González",
+    "prenom": "Carlos"
   }
 ]

@@ -8,7 +8,11 @@
 </head>
 <body>
     <h1>Liste des sessions</h1>
-    <a href="/sessions/add" class="button">Ajouter une session</a>
+    <div class="buttons-container">
+        <a href="/" class="button">Accueil</a>
+        <a href="/sessions/add" class="button">Ajouter une session</a>
+    </div>
+    
     <ul>
         <% sessions.forEach(function(session) { %>
             <li><%= session.nom %> - <%= session.annee %></li>

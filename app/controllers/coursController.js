@@ -40,7 +40,7 @@ exports.addCours = async (req, res) => {
         const cours = await readCours();
         cours.push(newCours);
         await saveCours(cours);
-        res.redirect('/cours/list');
+        res.redirect('/cours');
     } catch (error){
         res.status(500).send(error.toString());
     }
