@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Liste des sessions</title>
+    <link rel="stylesheet" href="/css/listStyle.css">
 </head>
 <body>
     <h1>Liste des sessions</h1>
+    <a href="/sessions/add" class="button">Ajouter une session</a>
     <ul>
         <% sessions.forEach(function(session) { %>
-            <li><%= session.name %> - <%= session.year %></li>
+            <li><%= session.nom %> - <%= session.annee %></li>
         <% }) %>
     </ul>
 </body>

@@ -19,13 +19,13 @@ const etudiantsRouter = require('./app/routes/etudiants');
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/sessions', sessionsRouter);
 app.use('/cours', coursRouter);
 app.use('/etudiants', etudiantsRouter);
-app.use(express.static('public'));
+
 
 
 app.listen(port, () => {

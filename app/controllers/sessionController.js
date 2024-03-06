@@ -7,17 +7,24 @@ const sessionsFilePath = path.join(__dirname, '..', 'data', 'sessions.json');
 //fonction qui lis le fichier sessions.json
 function readSessions() {
     return new Promise((resolve, reject) => {
+        console.log(`Lecture du fichier: ${sessionsFilePath}`);
         fs.readFile(sessionsFilePath, (err, data) => {
-            if (err) reject(err);
-            try{
-                const sessions = JSON.parse(data.toString());
-                resolve(sessions);
-            } catch (error){
-                reject("Erreur de lecture du fichier : " + error);
+            if (err) {
+                console.error("Erreur lors de la lecture du fichier", err);
+                reject(err);
+            } else {
+                try {
+                    const sessions = JSON.parse(data.toString());
+                    resolve(sessions);
+                } catch (error) {
+                    console.error("Erreur lors du parsing du JSON", error);
+                    reject("Erreur de lecture du fichier : " + error);
+                }
             }
         });
     });
 }
+
 
 //fonction pour sauvegarder dans dans le fichier session
 function saveSession(session) {

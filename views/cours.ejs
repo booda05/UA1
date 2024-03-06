@@ -1,11 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> 
 <head>
     <meta charset="UTF-8">
     <title>Liste des Cours</title>
+    <link rel="stylesheet" href="/css/listStyle.css">
+
 </head>
 <body>
     <h1>Liste des cours</h1>
+   
+    <a href="/cours/add" class="button">Ajouter un cours</a>
     <ul>
         <% cours.forEach(function(course) { %>
             <li><%= course.title %>: <%= course.description %></li>

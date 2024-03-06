@@ -3,10 +3,7 @@ const router = express.Router();
 const etudiantsController = require('../controllers/etudiantsController');
 
 
-router.get('/', (req, res) => {
-    res.send('Page des etudiants');
-});
-
+router.get('/', etudiantsController.listEtudiants);
 
 //route pour afficher le formulaire d'ajout d'etudiant
 router.get('/add', etudiantsController.showAddetudiantForm);
