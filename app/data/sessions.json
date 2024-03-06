@@ -14,5 +14,13 @@
   {
     "nom": "hiver",
     "annee": "2024"
+  },
+  {
+    "nom": "ETE",
+    "annee": "2024"
+  },
+  {
+    "nom": "ETE",
+    "annee": "2026"
   }
 ]

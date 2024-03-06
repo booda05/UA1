@@ -2,30 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><%= title %></title>
+    <title>Liste des étudiants</title>
     <link rel="stylesheet" href="/css/listStyle.css">
 </head>
 <body>
-    <h1><%= title %></h1>
-    <div class="search-container">
-        <form action="/etudiants/search" method="get">
-            <input type="text" name="query" placeholder="Rechercher un étudiant">
-            <button type="submit">Rechercher</button>
-        </form>
-    </div>
+    <h1>Liste des étudiants</h1>
     <div class="buttons-container">
         <a href="/" class="button">Accueil</a>
         <a href="/etudiants/add" class="button">Ajouter un étudiant</a>
     </div>
-    
-    <% if (!found) { %>
-        <p>Étudiant introuvable.</p>
-    <% } else { %>
-        <ul>
-            <% etudiants.forEach(function(student) { %>
-                <li><%= student.nom %> - <%= student.prenom %></li>
-            <% }) %>
-        </ul>
+    <form action="/etudiants/search" method="get">
+        <input type="text" name="query" placeholder="Rechercher un étudiant" required>
+        <button type="submit">Rechercher</button>
+    </form>
+    <ul id="student-list">
+        <% var found = typeof found !== 'undefined' ? found : true; %>
+
+        <% etudiants.forEach(function(student) { %>
+            <li id="student-<%= student.id %>"><%= student.nom %> - <%= student.prenom %></li>
+        <% }) %>
+    </ul>
+    <% if (!found && searchQuery) { %>
+        <p>Étudiant introuvable pour la recherche : "<%= searchQuery %>"</p>
     <% } %>
 </body>
 </html>

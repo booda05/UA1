@@ -50,7 +50,7 @@ exports.addSession = async (req, res) => {
         
         sessions.push(newSession); //ajoute la nouvelle session a la liste des sessions
         await saveSession(sessions);
-        res.redirect('/sessions/list');
+        res.redirect('/sessions');
     }catch(error){
         res.status(500).send(error.toString());
     }

@@ -14,4 +14,7 @@ router.post( '/add', coursController.addCours );
 //route pour lister tous les cours
 router.get('/list', coursController.listCours);
 
+// Route pour rechercher des cours
+router.get('/search', coursController.searchCours);
+
 module.exports = router;

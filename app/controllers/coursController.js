@@ -50,8 +50,31 @@ exports.addCours = async (req, res) => {
 exports.listCours = async (req, res) => {
     try {
      const cours = await readCours();
-     res.render("listCours", {title: 'Liste des Cours', cours});
+     res.render("listCours", {title: 'Liste des Cours', cours, query: ""});
 } catch (error) {
     res.status(500).send(error.toString());
     }
+};
+//chercher un cours 
+exports.searchCours = async (req, res) => {
+    try {
+        const { query } = req.query; // Récupère la requête de recherche de l'URL
+        const cours = await readCours(); // Lit tous les cours
+        
+        // Filtre les cours basé sur la requête de recherche
+        const filteredCours = cours.filter((coursItem) => 
+            coursItem.nom?.toLowerCase().includes(query.toLowerCase())
+        );
+
+         // Passer une variable supplémentaire pour indiquer si des résultats ont été trouvés
+    const found = filteredCours.length > 0;
+    
+    res.render('listCours', {
+      title: found ? 'Résultat de la recherche' : 'Cours introuvable',
+      cours: filteredCours,
+      found // Cette variable indique si des étudiants ont été trouvés
+    });
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
 };

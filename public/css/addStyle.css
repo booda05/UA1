@@ -54,3 +54,41 @@ button[type="submit"] {
     cursor: pointer;
     font-family: Arial, sans-serif;
 }
+.form-buttons {
+    display: flex;
+    justify-content: space-between; /* Ajustez selon vos préférences */
+}
+
+.button, button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Pour le <a> */
+    display: inline-block; /* Pour le <a> */
+}
+
+.button.cancel-button {
+    background-color: #ccc; /* Couleur de fond pour le bouton Annuler */
+    color: #000; /* Couleur du texte pour le bouton Annuler */
+}
+
+.button.cancel-button:hover {
+    background-color: #bbb; /* Couleur au survol pour le bouton Annuler */
+}
+/* Styliser spécifiquement le champ pour l'année */
+#annee {
+    width: 100%; /* Ajuste la largeur du champ à son conteneur */
+    padding: 10px; /* Ajoute de l'espace autour du texte à l'intérieur du champ */
+    margin-bottom: 10px; /* Ajoute de l'espace sous le champ */
+    border: 1px solid #ccc; /* Définit une bordure discrète */
+    border-radius: 5px; /* Arrondit les coins du champ */
+    background-color: #f8f8f8; /* Couleur de fond légèrement différente, si souhaité */
+    color: #333; /* Couleur du texte */
+}
+
+/* Vous pouvez ajouter :focus pour améliorer l'interaction utilisateur */
+#annee:focus {
+    border-color: #3659db; /* Change la couleur de la bordure lors de la sélection */
+    outline: none; /* Supprime l'outline par défaut pour se concentrer sur le style personnalisé */
+}

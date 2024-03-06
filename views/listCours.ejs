@@ -12,6 +12,11 @@
         <a href="/" class="button">Accueil</a>
         <a href="/cours/add" class="button">Ajouter un Cours</a>
     </div>    
+    <form action="/cours/search" method="get">
+        <% var searchQuery = typeof query !== 'undefined' ? query : ''; %>
+        <input type="text" name="query" placeholder="Rechercher un cours" value="<%= searchQuery %>">
+        <button type="submit">Rechercher</button>
+    </form>
     <ul>
         <% cours.forEach(function(course) { %>
             <li><%= course.title %>: <%= course.description %></li>

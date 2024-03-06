@@ -53,7 +53,7 @@ exports.addEtudiant = async (req, res) => {
     const etudiants = await readEtudiants(); // Recover the list of students
     etudiants.push(newEtudiant); // Add the new student to the list
     await saveEtudiants(etudiants); // Save the updated list in the json file
-    res.redirect('/etudiants/list'); // Redirect to the student management page
+    res.redirect('/etudiants'); // Redirect to the student management page
   } catch (error) {
     res.status(500).send(error.message);
   }
@@ -78,13 +78,16 @@ exports.searchEtudiants = async (req, res) => {
       etudiant.nom?.toLowerCase().includes(query.toLowerCase())
     );
     
+    // Passer une variable supplémentaire pour indiquer si des résultats ont été trouvés
     const found = filtreEtudiants.length > 0;
     
     res.render('listEtudiants', {
-      title: found ? 'Résultat de la recherche' : 'Étudiant introuvable',
+      title: 'Liste des étudiants',
       etudiants: filtreEtudiants,
-      found
+      found: filtreEtudiants.length > 0,
+      query: req.query.query // Assurez-vous de passer la requête à la vue
     });
+    
   } catch (error) {
     res.status(500).send(error.message);
   }
