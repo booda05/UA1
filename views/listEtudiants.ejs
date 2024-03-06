@@ -1,0 +1,20 @@
+<!-- views/listStudents.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des étudiants</title>
+</head>
+<body>
+    <h1>Liste des étudiants</h1>
+    <form action="/etudiants/search" method="get">
+        <input type="text" name="query" placeholder="Rechercher un étudiant">
+        <button type="submit">Rechercher</button>
+    </form>
+    <ul>
+        <% etudiants.forEach(function(student) { %>
+            <li><%= etudiant.name %> - <%= etudiant.email %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>

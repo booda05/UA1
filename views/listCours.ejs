@@ -1,0 +1,16 @@
+<!-- views/listCourses.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des cours</title>
+</head>
+<body>
+    <h1>Liste des cours</h1>
+    <ul>
+        <% cours.forEach(function(course) { %>
+            <li><%= cours.title %>: <%= cours.description %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!-- views/listSessions.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des sessions</title>
+</head>
+<body>
+    <h1>Liste des sessions</h1>
+    <ul>
+        <% sessions.forEach(function(session) { %>
+            <li><%= session.name %> - <%= session.year %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>

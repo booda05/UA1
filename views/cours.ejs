@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Cours</title>
+</head>
+<body>
+    <h1>Liste des Cours</h1>
+    <ul>
+        <% cours.forEach(function(cours) { %>
+            <li><%= cours.nom %> - <%= cours.description %></li>
+        <% }); %>
+    </ul>
+</body>
+</html>
