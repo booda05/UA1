@@ -5,11 +5,11 @@
     <title>Liste des Cours</title>
 </head>
 <body>
-    <h1>Liste des Cours</h1>
+    <h1>Liste des cours</h1>
     <ul>
-        <% cours.forEach(function(cours) { %>
-            <li><%= cours.nom %> - <%= cours.description %></li>
-        <% }); %>
+        <% cours.forEach(function(course) { %>
+            <li><%= course.title %>: <%= course.description %></li>
+        <% }) %>
     </ul>
 </body>
 </html>

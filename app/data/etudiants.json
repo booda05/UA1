@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Alice Dupont",
+    "email": "alice.dupont@example.com",
+    "specialite": "Informatique"
+  },
+  {
+    "name": "Bob Martin",
+    "email": "bob.martin@example.com",
+    "specialite": "Génie civil"
+  },
+  {
+    "name": "simohand ",
+    "email": "simohand@gmail.com",
+    "major": "programmation"
+  }
+]

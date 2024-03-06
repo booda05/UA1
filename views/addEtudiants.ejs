@@ -6,16 +6,17 @@
 </head>
 <body>
     <h1>Ajouter un nouvel étudiant</h1>
-    <form action="/students/add" method="post">
-        <div>
-            <label for="name">Nom de l'étudiant:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <button type="submit">Ajouter</button>
+    <form action="/etudiants/add" method="post">
+        <label for="name">Nom de l'étudiant:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="major">Spécialité:</label>
+    <input type="text" id="major" name="major" required>
+
+    <button type="submit">Ajouter l'étudiant</button>
     </form>
 </body>
 </html>

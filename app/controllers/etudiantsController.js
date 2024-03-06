@@ -46,7 +46,7 @@ exports.addEtudiant = async (req, res) => {
     const newEtudiant = req.body; // Recover the form data
 
     // Validate the input data
-    if (!newEtudiant.name || !newEtudiant.age || !newEtudiant.major) {
+    if (!newEtudiant.name || !newEtudiant.email || !newEtudiant.major) {
       throw new Error('Invalid input');
     }
 

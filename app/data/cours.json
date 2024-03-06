@@ -1,10 +1,10 @@
 [
   {
-    "nom": "Mathématiques",
+    "title": "Mathématiques",
     "description": "Ce cours traite des concepts mathématiques fondamentaux."
   },
   {
-    "nom": "Histoire",
+    "title": "Histoire",
     "description": "Ce cours explore l'histoire mondiale depuis l'Antiquité jusqu'à nos jours."
   },
   {
@@ -18,5 +18,9 @@
   {
     "title": "tmenyik",
     "description": "DZ"
+  },
+  {
+    "title": "tberbikh",
+    "description": "chikh el 3ethmani"
   }
 ]
