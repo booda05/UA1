@@ -13,14 +13,41 @@
         <a href="/cours/add" class="button">Ajouter un Cours</a>
     </div>    
     <form action="/cours/search" method="get">
-        <% var searchQuery = typeof query !== 'undefined' ? query : ''; %>
+       
         <input type="text" name="query" placeholder="Rechercher un cours" value="<%= searchQuery %>">
         <button type="submit">Rechercher</button>
     </form>
-    <ul>
-        <% cours.forEach(function(course) { %>
-            <li><%= course.title %>: <%= course.description %></li>
-        <% }) %>
-    </ul>
+    <% var query = query || ''; %>
+    <% if (query) { %>
+        <div class="buttons-container">
+            <a href="/etudiants/list" class="button">Retour</a>
+        </div>
+    <% } %>
+   
+     <% var searchQuery = typeof query !== 'undefined' ? query : ''; %>
+    <% if (!found) { %>
+        <p>Cours introuvable.</p>
+        <a href="/cours/list" class="button">retour</a>
+    <% } else { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+                <% cours.forEach(function(course) { %>
+                    
+                    <tr>
+                        <td><%= course.title %></td>
+                        <td><%= course.description %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        
+    <% } %>
 </body>
 </html>

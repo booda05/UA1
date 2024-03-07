@@ -56,12 +56,39 @@ exports.addSession = async (req, res) => {
     }
 }
 
-//
+//list les sessions
 exports.listSessions = async (req, res) => {
     try {
         const sessions = await readSessions();
         res.render('listSessions', { title: 'Liste des sessions', sessions });
     } catch (error) {
+        res.status(500).send(error.toString());
+    }
+};
+//rechercher les  sessions par nom ou date
+exports.searchSessions = async (req, res) => {
+    try {
+        const { nom, year } = req.query; // Récupère les deux critères de recherche
+        const sessions = await readSessions(); // Lit toutes les sessions
+        const searchPerformed = !!nom || !!year;
+
+        const filteredSessions = sessions.filter(session => {
+            // Vérifie si le nom correspond (si fourni)
+            const nomMatch = nom ? session.nom.toLowerCase().includes(nom.toLowerCase()) : true;
+            // Vérifie si l'année correspond (si fournie)
+            const yearMatch = year ? session.annee.toString() === year : true;
+            return nomMatch && yearMatch;
+        });
+
+        // Rend la vue listSessions avec les sessions filtrées
+        res.render("listSessions", { 
+            title: 'Résultats de recherche', 
+            sessions: filteredSessions,
+            searchQuery: { nom, year }, // Passez les deux critères pour maintenir la cohérence
+            searchPerformed: searchPerformed,
+        });
+    } catch (error) {
+        console.error("Erreur lors de la recherche des sessions", error);
         res.status(500).send(error.toString());
     }
 };

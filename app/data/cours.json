@@ -1,22 +1,42 @@
 [
-  {
-    "title": "Mathématiques",
-    "description": "Ce cours traite des concepts mathématiques fondamentaux."
-  },
-  {
-    "title": "Histoire",
-    "description": "Ce cours explore l'histoire mondiale depuis l'Antiquité jusqu'à nos jours."
-  },
-  {
-    "title": "chicho",
-    "description": "lhistoire du chicho"
-  },
-  {
-    "title": "boobi",
-    "description": "zoubi"
-  },
-  {
-    "title": "Geographie",
-    "description": "je sais pas ce que je fou ici"
-  }
-]
+    {
+      "title": "Introduction à la programmation",
+      "description": "Apprenez les bases de la programmation et de la résolution de problèmes."
+    },
+    {
+      "title": "Structures de données et algorithmes",
+      "description": "Explorez les structures de données fondamentales et les algorithmes."
+    },
+    {
+      "title": "Développement web",
+      "description": "Créez des sites web dynamiques en utilisant HTML, CSS et JavaScript."
+    },
+    {
+      "title": "Gestion de bases de données",
+      "description": "Apprenez les bases des bases de données relationnelles et SQL."
+    },
+    {
+      "title": "Systèmes d'exploitation",
+      "description": "Comprenez les principes et les composants des systèmes d'exploitation."
+    },
+    {
+      "title": "Sécurité réseau",
+      "description": "Étudiez les méthodes pour sécuriser les réseaux informatiques."
+    },
+    {
+      "title": "Intelligence artificielle",
+      "description": "Explorez le domaine de l'intelligence artificielle et de l'apprentissage automatique."
+    },
+    {
+      "title": "Développement d'applications mobiles",
+      "description": "Créez des applications mobiles natives pour les plateformes iOS et Android."
+    },
+    {
+      "title": "Génie logiciel",
+      "description": "Apprenez les meilleures pratiques pour le développement logiciel et la gestion de projets."
+    },
+    {
+      "title": "Science des données",
+      "description": "Appliquez des méthodes statistiques et computationnelles pour analyser des données."
+    }
+  ]

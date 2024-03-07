@@ -92,3 +92,26 @@ button[type="submit"] {
     border-color: #3659db; /* Change la couleur de la bordure lors de la sélection */
     outline: none; /* Supprime l'outline par défaut pour se concentrer sur le style personnalisé */
 }
+/* Styliser les champs select */
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    color: #333;
+    font-family: Arial, sans-serif;
+    -webkit-appearance: none; /* Enlève le style par défaut sur Safari */
+    -moz-appearance: none; /* Enlève le style par défaut sur Firefox */
+    appearance: none; /* Enlève le style par défaut sur les navigateurs modernes */
+}
+
+/* Ajouter une flèche personnalisée pour le select */
+select {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px;
+}
+

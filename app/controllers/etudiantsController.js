@@ -75,7 +75,8 @@ exports.searchEtudiants = async (req, res) => {
     const { query } = req.query;
     const etudiants = await readEtudiants();
     const filtreEtudiants = etudiants.filter((etudiant) =>
-      etudiant.nom?.toLowerCase().includes(query.toLowerCase())
+      etudiant.nom?.toLowerCase().includes(query.toLowerCase()) ||
+      etudiant.prenom?.toLowerCase().includes(query.toLowerCase())
     );
     
     // Passer une variable supplémentaire pour indiquer si des résultats ont été trouvés
@@ -85,7 +86,7 @@ exports.searchEtudiants = async (req, res) => {
       title: 'Liste des étudiants',
       etudiants: filtreEtudiants,
       found: filtreEtudiants.length > 0,
-      query: req.query.query // Assurez-vous de passer la requête à la vue
+       searchPerformed: !!req.query.query// Assurez-vous de passer la requête à la vue
     });
     
   } catch (error) {

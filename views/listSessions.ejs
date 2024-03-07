@@ -1,22 +1,53 @@
-<!-- views/listSessions.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Liste des sessions</title>
     <link rel="stylesheet" href="/css/listStyle.css">
+  
 </head>
 <body>
     <h1>Liste des sessions</h1>
+
     <div class="buttons-container">
+        
         <a href="/" class="button">Accueil</a>
         <a href="/sessions/add" class="button">Ajouter une session</a>
-    </div>
-    
-    <ul>
-        <% sessions.forEach(function(session) { %>
-            <li><%= session.nom %> - <%= session.annee %></li>
-        <% }) %>
-    </ul>
+    </div>    
+    <form action="/sessions/search" method="get">
+        <div>
+            <label for="nom">Nom de la session :</label>
+            <select id="nom" name="nom" required>
+                <option value="Automne">Automne</option>
+                <option value="Été">Été</option>
+                <option value="Hiver">Hiver</option>
+            </select>
+        </div>
+        <div>
+            <label for="year">Année :</label>
+            <select id="year" name="year" required>
+                <option value="">Toutes les années</option>
+                <% for(let year = 2024; year <= 2050; year++) { %>
+                    <option value="<%= year %>"><%= year %></option>
+                <% } %>
+            </select>
+        </div>
+        <button type="submit">Rechercher</button>
+    </form>
+   
+    <% if ( searchPerformed  ) { %>
+        <div class="buttons-container">
+            <a href="/sessions/list" class="button">Retour</a>
+        </div>
+    <% } %>
+    <% if (sessions.length > 0) { %>
+        <ul>
+            <% sessions.forEach(function(session) { %>
+                <li><%= session.nom %> - <%= session.annee %></li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>Session introuvable.</p>
+    <% } %>
 </body>
 </html>

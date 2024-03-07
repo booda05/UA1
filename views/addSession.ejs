@@ -1,25 +1,31 @@
-<!-- views/addSession.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Ajouter une session</title>
     <link rel="stylesheet" href="/css/addStyle.css">
-
 </head>
 <body>
     <h1>Ajouter une nouvelle session</h1>
     <form action="/sessions/add" method="post">
         <div>
             <label for="nom">Nom de la session:</label>
-            <input type="text" id="nom" name="nom" required>
+            <select id="nom" name="nom" required>
+                <option value="Automne">Automne</option>
+                <option value="Été">Été</option>
+                <option value="Hiver">Hiver</option>
+            </select>
         </div>
         <div>
             <label for="annee">Année:</label>
-            <input type="number" id="annee" name="annee" required>
+            <select id="annee" name="annee" required>
+                <% for(let year = 2024; year <= 2050; year++) { %>
+                    <option value="<%= year %>"><%= year %></option>
+                <% } %>
+            </select>
         </div>
         <button type="submit">Ajouter</button>
         <a href="/sessions" class="button cancel-button">Annuler</a>
     </form>
 </body>
-</html>
+</html> 

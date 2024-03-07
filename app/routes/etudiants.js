@@ -14,4 +14,7 @@ router.post('/add', etudiantsController.addEtudiant);
 //Route pour la recherche d'etudiant
 router.get('/search', etudiantsController.searchEtudiants);
 
+
+router.get('/list', etudiantsController.listEtudiants); //affiche la liste des étudiants
+
 module.exports = router;

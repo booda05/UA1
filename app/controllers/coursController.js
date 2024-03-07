@@ -49,10 +49,15 @@ exports.addCours = async (req, res) => {
 //lister les cours
 exports.listCours = async (req, res) => {
     try {
-     const cours = await readCours();
-     res.render("listCours", {title: 'Liste des Cours', cours, query: ""});
-} catch (error) {
-    res.status(500).send(error.toString());
+        const cours = await readCours(); // Assurez-vous que cette fonction retourne bien le tableau des cours
+        res.render('listCours', {
+            cours: cours, // Ici, vous passez le tableau des cours à la vue
+            found: cours.length > 0, // Vous pouvez utiliser cette condition pour déterminer si des cours ont été trouvés
+            query: '' // Initialiser `query` pour éviter des erreurs dans la vue
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Erreur lors de la récupération des cours.");
     }
 };
 //chercher un cours 
@@ -63,7 +68,7 @@ exports.searchCours = async (req, res) => {
         
         // Filtre les cours basé sur la requête de recherche
         const filteredCours = cours.filter((coursItem) => 
-            coursItem.nom?.toLowerCase().includes(query.toLowerCase())
+            coursItem.title?.toLowerCase().includes(query.toLowerCase())
         );
 
          // Passer une variable supplémentaire pour indiquer si des résultats ont été trouvés

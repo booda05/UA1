@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const sessionController = require('../controllers/sessionController');
 
-// Définir les routes spécifiques à "sessions"
+
 //route qui permet de lister toute les sessions
 router.get('/', sessionController.listSessions);
 
@@ -11,5 +11,8 @@ router.get('/add', sessionController.showAddSessionForm);
 
 //route pour ajouter une nouvelle session
 router.post('/add', sessionController.addSession);
+
+//route pour chercher la session
+router.get('/search', sessionController.searchSessions);
 
 module.exports = router;
