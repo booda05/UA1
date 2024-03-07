@@ -77,7 +77,8 @@ exports.searchCours = async (req, res) => {
     res.render('listCours', {
       title: found ? 'Résultat de la recherche' : 'Cours introuvable',
       cours: filteredCours,
-      found // Cette variable indique si des étudiants ont été trouvés
+      found, // Cette variable indique si des étudiants ont été trouvés
+      query: !!req.query.query,
     });
   } catch (error) {
     res.status(500).send(error.message);

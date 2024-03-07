@@ -27,17 +27,17 @@
             <label for="year">Année :</label>
             <select id="year" name="year" required>
                 <option value="">Toutes les années</option>
-                <% for(let year = 2024; year <= 2050; year++) { %>
+                <% for(let year = 2024; year <= 2030; year++) { %>
                     <option value="<%= year %>"><%= year %></option>
                 <% } %>
             </select>
         </div>
         <button type="submit">Rechercher</button>
     </form>
-   
-    <% if ( searchPerformed  ) { %>
+    <% var searchPerformed = searchPerformed || false; %>
+    <% if (searchPerformed) { %>
         <div class="buttons-container">
-            <a href="/sessions/list" class="button">Retour</a>
+            <a href="/sessions" class="button">Retour</a>
         </div>
     <% } %>
     <% if (sessions.length > 0) { %>

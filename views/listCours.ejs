@@ -20,14 +20,14 @@
     <% var query = query || ''; %>
     <% if (query) { %>
         <div class="buttons-container">
-            <a href="/etudiants/list" class="button">Retour</a>
+            <a href="/cours" class="button">Retour</a>
         </div>
     <% } %>
    
      <% var searchQuery = typeof query !== 'undefined' ? query : ''; %>
     <% if (!found) { %>
         <p>Cours introuvable.</p>
-        <a href="/cours/list" class="button">retour</a>
+    
     <% } else { %>
         <table>
             <thead>

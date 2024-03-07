@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const sessionController = require('../controllers/sessionController');
+const sessionController = require('../controllers/sessionsController');
 
 
 //route qui permet de lister toute les sessions

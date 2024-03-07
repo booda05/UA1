@@ -15,29 +15,38 @@ body {
 
 h1 {
     color: #007bff;
+    margin-bottom: 40px; /* Augmentez selon l'espacement désiré */
+    font-size: 2.5em; /* Taille du titre */
 }
 
 ul {
     list-style-type: none;
     padding: 0;
     display: flex;
-    flex-direction: row; 
-    gap: 20px; 
+    flex-direction: column;
+    align-items: center; /* Centre les éléments de la liste */
+    gap: 30px; /* Espacement entre les liens */
 }
 
 li {
-    margin: 10px 0;
+    width: 100%; /* Assure que les li s'étendent sur toute la largeur du conteneur */
+    display: flex;
+    justify-content: center; /* Centre le contenu des li */
 }
 
 a {
     color: #007bff;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 20px 40px; /* Augmente le padding pour agrandir les blocs */
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     display: inline-block;
+    font-size: 1.5em; /* Augmente la taille du texte */
+    min-width: 250px; /* Définit une largeur minimale pour tous les liens */
+    text-align: center; /* Assure que le texte est centré */
+    box-sizing: border-box; /* S'assure que padding et border sont inclus dans la largeur */
 }
 
 a:hover {
